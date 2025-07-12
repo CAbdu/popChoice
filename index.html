@@ -3,8 +3,36 @@
     <head>
         <title>PopChoice</title>
         <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="container">
+            <div class="header">
+                <img class="pop_img" src="assets/pop_img.png" alt="PopChoice">
+                <h1>PopChoice</h1>
+            </div>
+            <div class="content">
+                <div class="question-block">
+                    <label for="question1">What's your favorite movie and why?</label>
+                    <textarea id="question1" rows="3"></textarea>
+                </div>
+            
+            
+                <div class="question-block">
+                    <label for="question2">Are you in the mood for something new or a classic?</label>
+                    <textarea id="question2" rows="3"></textarea>
+                </div>
+            
+                <div class="question-block">
+                    <label for="question3">Do you wanna have fun or do you want something serious</label>
+                    <textarea id="question3" rows="3"></textarea>
+                </div>               
+            
+                <button class="submit-button">Let's Go</button>
+            </div>
+        </div>
         <script type="module" src="index.js"></script>
     </body>
 </html> 
