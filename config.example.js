@@ -4,6 +4,6 @@ export const openai = {
 };
 
 export const supabase = {
-  url: "VOTRE_URL_SUPABASE_ICI ",
+  url: "VOTRE_URL_SUPABASE_ICI",
   key: "VOTRE_CLE_SUPABASE_ICI"
 };
