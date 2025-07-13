@@ -1,15 +1,31 @@
 import { openai, supabase } from './config.js';
 import movies from './content.js'
 
+// Vérifier si l'utilisateur vient de la page de sélection
+document.addEventListener('DOMContentLoaded', function() {
+  const peopleCount = localStorage.getItem('peopleCount');
+  const timeAvailable = localStorage.getItem('timeAvailable');
+  
+  // Si les valeurs de sélection ne sont pas présentes, rediriger vers index.html (page de sélection)
+  if (!peopleCount || !timeAvailable) {
+    window.location.href = 'index.html';
+    return;
+  }
+});
+
 const submitBtn = document.querySelector(".submit-button");
 
 // Event listener pour le bouton de soumission
 submitBtn.addEventListener("click", async () => {
+  // Récupérer les valeurs de la page de sélection
+  const peopleCount = localStorage.getItem('peopleCount') || '';
+  const timeAvailable = localStorage.getItem('timeAvailable') || '';
+  
   const r1 = document.getElementById("q1").value.trim();
   const r2 = document.getElementById("q2").value.trim();
   const r3 = document.getElementById("q3").value.trim();
 
-  const userInput = `${r1}. ${r2}. ${r3}.`;
+  const userInput = `People: ${peopleCount}, Time: ${timeAvailable}. ${r1}. ${r2}. ${r3}.`;
 
   try {
     // Créer un embedding pour l'entrée utilisateur
