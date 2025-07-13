@@ -1,8 +1,9 @@
 // Exemple de configuration - remplacez par vos vraies clés
 export const openai = {
-  // Votre configuration OpenAI
+  apiKey: "VOTRE_CLE_API_OPENAI_ICI"
 };
 
 export const supabase = {
-  // Votre configuration Supabase
+  url: "VOTRE_URL_SUPABASE_ICI ",
+  key: "VOTRE_CLE_SUPABASE_ICI"
 };
