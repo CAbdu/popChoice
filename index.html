@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PopChoice</title>
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="selection.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -15,26 +16,18 @@
                 <img class="pop_img" src="assets/pop_img.png" alt="PopChoice">
                 <h1>PopChoice</h1>
             </div>
-            <div class="content">
-                <div class="question-block">
-                    <label for="q1">What's your favorite movie and why?</label>
-                    <textarea id="q1" rows="3"></textarea>
+            <div class="selection-content">
+                <div class="selection-block">
+                    <input type="text" id="peopleCount" placeholder="How many people" class="selection-input">
                 </div>
-            
-            
-                <div class="question-block">
-                    <label for="q2">Are you in the mood for something new or a classic?</label>
-                    <textarea id="q2" rows="3"></textarea>
+                
+                <div class="selection-block">
+                    <input type="text" id="timeAvailable" placeholder="How much time do you have" class="selection-input">
                 </div>
-            
-                <div class="question-block">
-                    <label for="q3">Do you wanna have fun or do you want something serious</label>
-                    <textarea id="q3" rows="3"></textarea>
-                </div>               
-            
-                <button class="submit-button">Let's Go</button>
+                
+                <button class="start-button" onclick="startSelection()">Start</button>
             </div>
         </div>
-        <script type="module" src="index.js"></script>
+        <script src="selection.js"></script>
     </body>
 </html> 

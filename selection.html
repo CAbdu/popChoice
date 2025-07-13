@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PopChoice - Sélection</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="selection.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <img class="pop_img" src="assets/pop_img.png" alt="PopChoice">
+                <h1>PopChoice</h1>
+            </div>
+            <div class="selection-content">
+                <div class="selection-block">
+                    <input type="text" id="peopleCount" placeholder="How many people" class="selection-input">
+                </div>
+                
+                <div class="selection-block">
+                    <input type="text" id="timeAvailable" placeholder="How much time do you have" class="selection-input">
+                </div>
+                
+                <button class="start-button" onclick="startSelection()">Start</button>
+            </div>
+        </div>
+        <script src="selection.js"></script>
+    </body>
+</html> 
