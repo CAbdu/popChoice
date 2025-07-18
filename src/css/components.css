@@ -1,0 +1,87 @@
+/* Styles pour la page de résultats */
+.result-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.result-section h2 {
+  color: #51e08a;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.movie-card {
+  background-color: #3b4877;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movie-info h3 {
+  color: #51e08a;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.movie-description {
+  color: white;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.movie-year,
+.movie-genre {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.actions button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#new-search {
+  background-color: #51e08a;
+  color: black;
+}
+
+#new-search:hover {
+  background-color: #45c77a;
+}
+
+.secondary-button {
+  background-color: #3b4877;
+  color: white;
+  border: 2px solid #51e08a;
+}
+
+.secondary-button:hover {
+  background-color: #51e08a;
+  color: black;
+}
+
+/* Responsive design pour les actions */
+@media (max-width: 600px) {
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .actions button {
+    width: 200px;
+  }
+}

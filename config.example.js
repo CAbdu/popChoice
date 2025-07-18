@@ -1,4 +1,4 @@
-// Exemple de configuration - remplacez par vos vraies clés
+// Exemple de configuration - Copiez ce fichier vers src/js/config.js et remplacez par vos vraies clés
 export const openai = {
   apiKey: "VOTRE_CLE_API_OPENAI_ICI"
 };

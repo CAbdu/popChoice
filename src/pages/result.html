@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PopChoice - Résultats</title>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/components.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
@@ -12,23 +13,23 @@
     <body>
         <div class="container">
             <div class="header">
-                <img class="pop_img" src="assets/pop_img.png" alt="PopChoice">
+                <img class="pop_img" src="../assets/pop_img.png" alt="PopChoice">
                 <h1>PopChoice</h1>
             </div>
             <div class="content">
                 <div class="result-section">
-                    <h2>🎬 Votre film recommandé</h2>
+                    <h2>🎬 your recommended movie</h2>
                     <div id="movie-result" class="movie-card">
                         <!-- Le résultat sera affiché ici -->
                     </div>
                 </div>
                 
                 <div class="actions">
-                    <button id="new-search">Nouvelle recherche</button>
-                    <button id="back-home" class="secondary-button">Retour à l'accueil</button>
+                    <button id="new-search">New Search</button>
+                    <button id="back-home" class="secondary-button">Return to home</button>
                 </div>
             </div>
         </div>
-        <script type="module" src="result.js"></script>
+        <script type="module" src="../js/pages/result.js"></script>
     </body>
 </html> 

@@ -1,0 +1,158 @@
+html,
+body {
+  background-color: #000c36;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  flex-direction: column;
+}
+
+.header h1 {
+  font-family: 'Carter One', system-ui;
+  font-size: 45px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  padding-top: 10px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.pop_img {
+  width: 99px;
+  height: 108px;
+  top: 50px;
+  left: 147px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 0.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.question-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+}
+
+.question-block .choices {
+  display: inline-block;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: large;
+}
+
+textarea {
+  background-color: #3b4877;
+  resize: vertical;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.choices {
+  background-color: #3c4978;
+  color: white;
+  width: 80px;
+  border-radius: 3px;
+  border-style: none;
+  cursor: pointer;
+  margin: 0 5px 0 0; /* espace à droite sauf pour le dernier */
+}
+
+.choices.active-choice {
+  background-color: #51e08a;
+  color: #000c36;
+  font-weight: bold;
+  border: 2px solid #fff;
+}
+
+.question-block label,
+.question-block textarea {
+  margin-bottom: 5px;
+}
+
+.question-block button.choices {
+  display: inline-block;
+}
+
+.choices-group {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+/* 📱 Version mobile : stack en colonne */
+@media (max-width: 600px) {
+  .question-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .question-block label {
+    width: 100%;
+  }
+
+  .question-block input[type='text'] {
+    width: 100%;
+  }
+}
+
+.submit-button {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.2rem;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: black;
+  width: 350px;
+
+  opacity: 1;
+  border-radius: 10px;
+  background-color: #51e08a;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.next-person {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.2rem;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: black;
+  width: 350px;
+
+  opacity: 1;
+  border-radius: 10px;
+  background-color: #51e08a;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.person-counter {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: 'Carter One', system-ui;
+}
