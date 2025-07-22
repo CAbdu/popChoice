@@ -149,6 +149,23 @@ textarea {
   cursor: pointer;
 }
 
+#next-movies {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: black;
+  width: 250px;
+
+  opacity: 1;
+  border-radius: 10px;
+  background-color: #51e08a;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+#next-movie:hover {
+  background-color: #45c77a;
+}
+
 .person-counter {
   text-align: center;
   color: #fff;

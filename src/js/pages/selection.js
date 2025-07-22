@@ -11,6 +11,10 @@ function startSelection() {
         alert('Le nombre de personnes doit être compris entre 1 et 5.');
         return;
     }
+    if (!/^\d+$/.test(timeAvailable) || parseInt(timeAvailable, 10) < 1) {
+        alert('The time available have to be in minutes');
+        return;
+    }
     
     // Stocker les valeurs dans localStorage pour les utiliser dans questions.html
     localStorage.setItem('peopleCount', peopleCount);

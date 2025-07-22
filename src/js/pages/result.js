@@ -1,3 +1,5 @@
+import movies from '../content.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Récupérer toutes les réponses depuis localStorage
     const allAnswers = JSON.parse(localStorage.getItem('allAnswers') || '[]');
@@ -10,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Fusionner toutes les réponses pour créer un prompt collectif
-    const peopleCount = allAnswers.length;
     let prompt = '';
     prompt += `Temps disponible pour le groupe : ${timeAvailable}\n\n`;
     allAnswers.forEach((answers, idx) => {
@@ -32,9 +33,63 @@ document.addEventListener('DOMContentLoaded', function() {
         const movie = JSON.parse(movieData);
         displayMovie(movie);
     } else {
-        // Afficher un message d'attente ou lancer la requête IA ici
-        document.getElementById('movie-result').innerHTML = '<p>Processing in progress...</p>';
-        // TODO : Lancer la requête IA ici avec le prompt collectif
+        // Filtrer les films selon le temps disponible
+        const maxMinutes = parseInt(timeAvailable, 10);
+        const filteredMovies = movies.filter(movie => {
+            // Extraire la durée du champ content, format attendu : (X hr YY min) ou (X hr) ou (YY min)
+            const match = movie.content.match(/\((\d+)\s*hr(?:\s*(\d+)\s*min)?\)|\((\d+)\s*min\)/i);
+            let duration = 0;
+            if (match) {
+                if (match[1]) {
+                    duration += parseInt(match[1], 10) * 60;
+                    if (match[2]) duration += parseInt(match[2], 10);
+                } else if (match[3]) {
+                    duration += parseInt(match[3], 10);
+                }
+            }
+            return duration > 0 && duration <= maxMinutes;
+        });
+        if (filteredMovies.length > 0) {
+            let currentIndex = 0;
+            function showMovies(startIdx) {
+                const movieResult = document.getElementById('movie-result');
+                movieResult.innerHTML = '';
+                const toShow = filteredMovies.slice(startIdx, startIdx + 3);
+                toShow.forEach(movie => {
+                    movieResult.innerHTML += renderMovieHTML(movie);
+                });
+                // Ajouter le bouton Next si besoin
+                if (filteredMovies.length > startIdx + 3) {
+                    if (!document.getElementById('next-movies')) {
+                        const btn = document.createElement('button');
+                        btn.id = 'next-movies';
+                        btn.textContent = 'Next movies';
+                        btn.onclick = function() {
+                            currentIndex += 3;
+                            showMovies(currentIndex);
+                        };
+                        movieResult.appendChild(btn);
+                    }
+                } else {
+                    const btn = document.getElementById('next-movies');
+                    if (btn) btn.remove();
+                }
+            }
+            // Fonction pour générer le HTML d'un film
+            function renderMovieHTML(movie) {
+                return `
+                    <div class="movie-info">
+                        <h3>${movie.title || 'Grab some Popcorn'}</h3>
+                        <p class="movie-description">${movie.content || 'Description du film'}</p>
+                        ${movie.year ? `<p class="movie-year">Année: ${movie.year}</p>` : ''}
+                        ${movie.genre ? `<p class="movie-genre">Genre: ${movie.genre}</p>` : ''}
+                    </div>
+                `;
+            }
+            showMovies(currentIndex);
+        } else {
+            document.getElementById('movie-result').innerHTML = '<p>Aucun film ne correspond à la durée disponible.</p>';
+        }
     }
     
     // Event listeners pour les boutons
